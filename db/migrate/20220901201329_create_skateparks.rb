@@ -4,7 +4,6 @@ class Skateparks < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :avatar
       t.string :location
-      t.integer :skater_id
     end
   end
 end
