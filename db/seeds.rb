@@ -2,6 +2,31 @@ puts "🌱 Seeding spices..."
 
 # Seed your database here
 categories = ["skateboard", "inlineskate", "rollerskate", "scooter","other"]
+skateparks = [
+    {
+        name: "Cal Anderson Improvised Skate Park",
+        location:"Capitol Hill"
+    }, 
+    {
+        name:"Delridge Skate Park",
+        location:"West Seattle"
+    },
+    {
+        name:"Jefferson Skate Park",
+        location:"Beacon Hill"
+    }, 
+    {
+        name:"Judkins Skate Park",
+        location:"Central District"
+    }, 
+    {
+        name:"Seattle Center Skate Plaza",
+        location:""
+    }, 
+    {
+        name:"Lower Woodland Skate Park",
+        location:"Greenlake"
+    }]
 
 def fake_first_name
     Faker::Name.first_name
@@ -11,25 +36,34 @@ def fake_last_name
     Faker::Name.last_name
 end
 
-# 10.times do
-#     first_name = fake_first_name()
-#     last_name = fake_last_name()
-#     User.create(
-#         first_name: first_name,
-#         last_name: last_name,
-#         email: "#{first_name}.#{last_name}@email.com",
-#         category: ["jet-setter", "vanlifer", "traveler"][rand(0..2)],
-#         password: Faker::Internet::password,
-#         follower_id: rand(1..10)
-#     )
-# end
+skateparks.map do |sp|
+    SkatePark.create(
+        name: sp
+        
+    )
+end
+
+10.times do
+    first_name = fake_first_name()
+    last_name = fake_last_name()
+    User.create(
+        first_name: first_name,
+        last_name: last_name,
+        email: "#{first_name}.#{last_name}@email.com",
+        password: Faker::Internet::password,
+        category_id: rand(1..5),
+
+        
+    )
+end
+
+
 
 categories.map do |c|
     Category.create(
         category_name:c
     )
 end
-
 
 
 puts "✅ Done seeding!"
