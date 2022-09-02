@@ -1,3 +1,3 @@
-class SkatePark < ActiveRecord::Base
+class Skatepark < ActiveRecord::Base
     has_many :users
 end
