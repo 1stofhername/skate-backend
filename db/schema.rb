@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2022_09_02_014258) do
     t.string "name"
     t.string "avatar"
     t.string "location"
-    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

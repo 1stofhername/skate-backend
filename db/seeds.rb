@@ -1,7 +1,9 @@
+require 'faker'
+
 puts "🌱 Seeding spices..."
 
 # Seed your database here
-categories = ["skateboard", "inlineskate", "rollerskate", "scooter","other"]
+categories = ["skateboard", "inlineskate", "rollerskate", "scooter", "bike", "other"]
 skateparks = [
     {
         name: "Cal Anderson Improvised Skate Park",
@@ -38,8 +40,8 @@ end
 
 skateparks.map do |sp|
     SkatePark.create(
-        name: sp
-        
+        name: sp[:name],
+        location: sp[:location]
     )
 end
 
@@ -52,8 +54,8 @@ end
         email: "#{first_name}.#{last_name}@email.com",
         password: Faker::Internet::password,
         category_id: rand(1..5),
-
-        
+        checkedIn: true,
+        skatepark_id: rand(1..6)
     )
 end
 
