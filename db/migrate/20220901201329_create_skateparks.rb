@@ -4,7 +4,6 @@ class CreateSkateparks < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :avatar
       t.string :location
-      t.integer :user_id
     end
   end
 end
