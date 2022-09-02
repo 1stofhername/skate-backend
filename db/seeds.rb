@@ -39,7 +39,7 @@ def fake_last_name
 end
 
 skateparks.map do |sp|
-    SkatePark.create(
+    Skatepark.create(
         name: sp[:name],
         location: sp[:location]
     )
