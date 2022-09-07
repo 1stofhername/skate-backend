@@ -54,7 +54,7 @@ end
         email: "#{first_name}.#{last_name}@email.com",
         password: Faker::Internet::password,
         category_id: rand(1..6),
-        checkedIn?: true,
+        checkedIn: true,
         skatepark_id: rand(1..5)
     )
 end

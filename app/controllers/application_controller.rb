@@ -15,6 +15,11 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get "/skateparks/:id" do
+    @skatepark = Skatepark.find(params["id"])
+    @skatepark.to_json
+  end
+
   get "/skateparks" do
     skateparks = Skatepark.all
     skateparks.to_json
