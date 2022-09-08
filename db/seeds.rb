@@ -63,7 +63,7 @@ end
 
 categories.map do |c|
     Category.create(
-        category_name:c
+        name:c
     )
 end
 
