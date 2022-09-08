@@ -36,12 +36,12 @@ class ApplicationController < Sinatra::Base
 
   patch "/users/checkin/:id" do
     @user = User.find(params[:id])
-    @skatepark_id = Skatepark.get_park_id_by_name(params[:skatepark_name])
-    @category = Category.find_by(category_name: params[:category_name])
+    @skatepark_id = Skatepark.get_id_by_name(params[:skatepark_name])
+    @category_id = Category.get_id_by_name(params[:category_name])
     @user.update(
       checkedIn: true,
       skatepark_id: @skatepark_id,
-      # category_id: "#{@category.id}",
+      category_id: @category_id
     )
     @user.to_json
   end
