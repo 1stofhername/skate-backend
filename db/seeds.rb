@@ -3,7 +3,7 @@ require 'faker'
 puts "🌱 Seeding spices..."
 
 # Seed your database here
-categories = ["skateboard", "inlineskate", "rollerskate", "scooter", "bike", "other"]
+categories = ["skateboard", "inlineskates", "rollerskates", "scooter", "bike", "other"]
 skateparks = [
     {
         name: "Cal Anderson Improvised Skate Park",
