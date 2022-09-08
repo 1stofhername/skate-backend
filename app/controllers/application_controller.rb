@@ -15,14 +15,36 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get "/skateparks" do
+    skateparks = Skatepark.all
+    skateparks.to_json
+  end
+
   get "/skateparks/:id" do
     @skatepark = Skatepark.find(params["id"])
     @skatepark.to_json
   end
 
-  get "/skateparks" do
-    skateparks = Skatepark.all
-    skateparks.to_json
+  patch "/users/checkout/:id" do
+    user = User.find(params[:id])
+    user.update(
+      checkedIn: params[:checkedIn],
+      skatepark_id: params[:skatepark_id]
+    )
+    user.to_json
   end
+
+  patch "/users/checkin/:id" do
+    @user = User.find(params[:id])
+    @skatepark_id = Skatepark.get_park_id_by_name(params[:skatepark_name])
+    @category = Category.find_by(category_name: params[:category_name])
+    @user.update(
+      checkedIn: true,
+      skatepark_id: @skatepark_id,
+      # category_id: "#{@category.id}",
+    )
+    @user.to_json
+  end
+    
 
 end
