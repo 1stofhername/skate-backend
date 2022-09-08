@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :last_name
       t.string :email
       t.string :password
-      t.string :category_id
+      t.integer :category_id
       t.integer :skatepark_id
       t.boolean :checkedIn
     end
