@@ -112,7 +112,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 6.1)
-  carrierwave
+  carrierwave (~> 2.0)
   database_cleaner (~> 2.0)
   faker (~> 1.6, >= 1.6.6)
   pry (~> 0.14.1)
