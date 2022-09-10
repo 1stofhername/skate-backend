@@ -35,7 +35,7 @@ gem "sqlite3", "~> 1.4"
 gem "require_all", "~> 3.0"
 
 # This gem provides a simple and extremely flexible way to upload files from Ruby applications.
-gem 'carrierwave'
+gem 'carrierwave', '~> 2.0'
 
 #Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
 gem 'faker', '~> 1.6', '>= 1.6.6'
