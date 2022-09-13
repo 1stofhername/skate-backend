@@ -7,12 +7,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/login/:email&:password' do
-    @user = User.find_by(email: params["email"], password: params["password"])
-    if @user
-      @user.to_json
-    else
-      "User/password mismatch".to_json
-    end
+    User.validate_user(params["email"], params["password"]).to_json
   end
 
   get "/skateparks" do
