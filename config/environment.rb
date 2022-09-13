@@ -7,11 +7,11 @@ require 'bundler/setup'
 Bundler.require(:default, ENV['RACK_ENV'])
 
 # Require Carrierwave for file uploads
-require 'carrierwave'|
+require 'carrierwave'
 require 'carrierwave/orm/activerecord'
 
-Carrierwave.configure do |config|
-    config.root = ".public"
+CarrierWave.configure do |config|
+    config.root = "./public"
 end
 
 # Require in all files in 'app' directory

@@ -46,9 +46,14 @@ class ApplicationController < Sinatra::Base
     @user.to_json
   end  
 
-  post '/users/signup' do
-    category_id = Category.get_id_by_name(params[:category])
-    user = User.create(first_name: params["first_name"], last_name: params["last_name"], email: params["email"], password: params["password"], category_id: category_id)
+  post "/users/signup" do
+    user = User.create(
+      first_name: params[:first_name], 
+      last_name: params[:last_name], 
+      email: params[:email], 
+      password: params[:password],
+      checkedIn: false
+    )
     user.to_json
   end
 
