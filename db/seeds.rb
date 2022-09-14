@@ -48,14 +48,36 @@ end
 10.times do
     first_name = fake_first_name()
     last_name = fake_last_name()
-    User.create(
-        first_name: first_name,
-        last_name: last_name,
-        email: "#{first_name}.#{last_name}@email.com",
-        password: Faker::Internet::password,
-        category_id: rand(1..6),
-        checkedIn: rand(0..1)
-    )
+    @checkedIn = rand(0..1)
+    if @checkedIn === 1
+        User.create(
+            first_name: first_name,
+            last_name: last_name,
+            email: "#{first_name}.#{last_name}@email.com",
+            password: Faker::Internet::password,
+            category_id: rand(1..6),
+            checkedIn: @checkedIn,
+            skatepark_id: rand(1..6)
+        )
+    else
+        User.create(
+            first_name: first_name,
+            last_name: last_name,
+            email: "#{first_name}.#{last_name}@email.com",
+            password: Faker::Internet::password,
+            category_id: rand(1..6),
+            checkedIn: @checkedIn
+        )
+    end
+    # User.create(
+    #     first_name: first_name,
+    #     last_name: last_name,
+    #     email: "#{first_name}.#{last_name}@email.com",
+    #     password: Faker::Internet::password,
+    #     category_id: rand(1..6),
+    #     checkedIn: checkedIn,
+    #     skatepark_id: rand(1..6)
+    # )
 end
 
 
