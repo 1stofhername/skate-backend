@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
     def self.validate_user email, password
         @user = User.find_by(email: email)
         if @user
-            # @validateduser = User.find_by(email: email, password: password)
             if @user.password === password
                 return @user
             else

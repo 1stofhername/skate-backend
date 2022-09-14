@@ -12,7 +12,9 @@ class ApplicationController < Sinatra::Base
 
   get "/skateparks" do
     skateparks = Skatepark.all
-    skateparks.to_json
+    skateparks.to_json(include: {
+      users: { only: [:id, :first_name, :last_name, :category_id]}
+    })
   end
 
   get "/skateparks/:id" do
