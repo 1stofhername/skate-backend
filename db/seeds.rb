@@ -11,23 +11,28 @@ skateparks = [
     }, 
     {
         name:"Delridge Skate Park",
-        location:"West Seattle"
+        location:"West Seattle",
+        imglink: "https://i.ibb.co/TgJT118/delridge.png"
     },
     {
         name:"Jefferson Skate Park",
-        location:"Beacon Hill"
+        location:"Beacon Hill",
+        imglink: "https://i.ibb.co/yRj6DXP/jefferson.png"
     }, 
     {
         name:"Judkins Skate Park",
-        location:"Central District"
+        location:"Central District",
+        imglink:"https://i.ibb.co/brj5YDr/judkins.png"
     }, 
     {
-        name:"Seattle Center Skate Plaza",
-        location:""
+        name:"Seattle Center Skate Plaza (Seask8)",
+        location:"Seattle Center",
+        imglink:"https://i.ibb.co/28Lv9Vp/Screen-Shot-2022-09-15-at-3-16-52-PM.png"
     }, 
     {
         name:"Lower Woodland Skate Park",
-        location:"Greenlake"
+        location:"Greenlake",
+        imglink:"https://i.ibb.co/bgB1DsV/lower-woodland.png"
     }]
 
 def fake_first_name
@@ -41,11 +46,12 @@ end
 skateparks.map do |sp|
     Skatepark.create(
         name: sp[:name],
-        location: sp[:location]
+        location: sp[:location],
+        imglink: sp[:imglink]
     )
 end
 
-10.times do
+30.times do
     first_name = fake_first_name()
     last_name = fake_last_name()
     @checkedIn = rand(0..1)
