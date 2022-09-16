@@ -31,6 +31,12 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  delete "/users/delete/:id" do
+    user = User.find(params[:id])
+    user.destroy
+    user.to_json
+  end
+
   patch "/users/checkin/:id" do
     @user = User.find(params[:id])
     @skatepark_id = Skatepark.get_id_by_name(params[:skatepark_name])
