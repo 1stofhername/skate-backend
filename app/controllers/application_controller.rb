@@ -60,4 +60,17 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  get "/categories" do
+    categories = Category.all
+    categories.to_json(include: {
+      users: {only: [:id, :first_name, :last_name, :skatepark_id]}
+    })
+  end
+
+  get "/skateparks" do
+    skateparks = Skatepark.all
+    skateparks.to_json(include: {
+      users: { only: [:id, :first_name, :last_name, :category_id]}
+    })
+  end
 end
