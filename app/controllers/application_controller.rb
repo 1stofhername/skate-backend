@@ -26,7 +26,8 @@ class ApplicationController < Sinatra::Base
     user = User.find(params[:id])
     user.update(
       checkedIn: params[:checkedIn],
-      skatepark_id: params[:skatepark_id]
+      skatepark_id: params[:skatepark_id],
+      category_id: params[:category_id]
     )
     user.to_json
   end
