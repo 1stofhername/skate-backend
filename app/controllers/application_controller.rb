@@ -67,7 +67,9 @@ class ApplicationController < Sinatra::Base
       location: params[:location],
       imglink: params[:imglink]
     )
-    skatepark.to_json
+    skatepark.to_json(include: {
+      users: {only: [:id, :first_name, :last_name, :skatepark_id]}
+    })
   end
 
   get "/categories" do
