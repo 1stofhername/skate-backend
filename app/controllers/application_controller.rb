@@ -61,6 +61,14 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  post "/skateparks/create" do
+    skatepark = Skatepark.create(
+      name: params[:name],
+      location: params[:location],
+      imglink: params[:imglink]
+    )
+  end
+
   get "/categories" do
     categories = Category.all
     categories.to_json(include: {
