@@ -67,6 +67,7 @@ class ApplicationController < Sinatra::Base
       location: params[:location],
       imglink: params[:imglink]
     )
+    skatepark.to_json
   end
 
   get "/categories" do
