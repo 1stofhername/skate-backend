@@ -7,7 +7,8 @@ categories = ["skateboard", "inlineskates", "rollerskates", "scooter", "bike", "
 skateparks = [
     {
         name: "Cal Anderson Improvised Skate Park",
-        location:"Capitol Hill"
+        location:"Capitol Hill",
+        imglink: "https://i.ibb.co/txgtTSn/cal-ander.png"
     }, 
     {
         name:"Delridge Skate Park",
